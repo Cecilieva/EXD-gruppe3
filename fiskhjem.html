@@ -7,9 +7,33 @@
     <link rel="stylesheet" href="css/css.css">
 </head>
 <body>
+    <!-- Svømmende fisk i baggrunden -->
+    <div class="swimming-fish">
+        <img src="image/nemofisk.png" alt="Nemo fisk" class="fish fish1">
+        <img src="image/gubbi.png" alt="Guppy fisk" class="fish fish2">
+        <img src="image/Raevfisk.png" alt="Kirurg fisk" class="fish fish3">
+        <img src="image/reje.png" alt="Reje" class="fish fish4">
+    </div>
+    
     <button class="tilbage-button" onclick="tilbageButtonClick()">
         <img src="image/tilbage.png" alt="Tilbage knap">
     </button>
+    
+    <div class="center-container">
+        <img src="image/anemone.png" alt="Anemone" class="center-image" onclick="openModal('image/anemoneinfo.png')">
+        <img src="image/groenkoral.png" alt="Grøn koral" class="center-image" onclick="openModal('image/tanginfo.png')">
+    </div>
+    
+    <!-- Modal til at vise info billeder -->
+    <div id="imageModal" class="modal" onclick="closeModal()">
+        <div class="modal-content">
+            <button class="close-btn" onclick="closeModal()">
+                <img src="image/Kryds.png" alt="Luk">
+            </button>
+            <img id="modalImage" src="" alt="Info billede">
+            <img src="image/vdvm.png" alt="VDVM Logo" class="vdvm-logo">
+        </div>
+    </div>
     
     <script src="js/js.js"></script>
 </body>

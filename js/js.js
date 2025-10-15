@@ -195,3 +195,23 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
+// Modal funktioner for info billeder
+function openModal(imageSrc) {
+    const modal = document.getElementById('imageModal');
+    const modalImage = document.getElementById('modalImage');
+    
+    modalImage.src = imageSrc;
+    modal.style.display = 'block';
+    
+    // Forhindre body scroll når modal er åben
+    document.body.style.overflow = 'hidden';
+}
+
+function closeModal() {
+    const modal = document.getElementById('imageModal');
+    modal.style.display = 'none';
+    
+    // Genaktiver body scroll
+    document.body.style.overflow = 'auto';
+}
