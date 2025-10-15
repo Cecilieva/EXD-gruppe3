@@ -1,4 +1,4 @@
-// Uendelig karusel funktionalitet
+// Uendelig karusel funktionalitet 
 function scrollCarousel(direction) {
     const track = document.querySelector('.carousel-track');
     const itemWidth = 270; // Billede bredde + gap
@@ -91,7 +91,7 @@ function showFishInfo(fishType) {
         infoImage.alt = 'Gubbi information';
         console.log('Gubbi billede sat til:', infoImage.src);
     }
-    
+
     // Vis højtaler knappen for alle fisk-info billeder
     if (speakerBtn) {
         speakerBtn.style.display = 'block';
@@ -106,7 +106,7 @@ function closeModal() {
     const speakerBtn = document.getElementById('speaker-button');
     
     modal.style.display = 'none';
-    
+
     // Skjul højtaler knappen når modal lukkes
     if (speakerBtn) {
         speakerBtn.style.display = 'none';
