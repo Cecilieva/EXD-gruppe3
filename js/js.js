@@ -1,0 +1,197 @@
+// Uendelig karusel funktionalitet
+function scrollCarousel(direction) {
+    const track = document.querySelector('.carousel-track');
+    const itemWidth = 270; // Billede bredde + gap
+    const scrollAmount = itemWidth * 2; // Scroll 2 billeder ad gangen
+    const halfWidth = track.scrollWidth / 2;
+    
+    // Normal scroll
+    track.scrollBy({
+        left: direction * scrollAmount,
+        behavior: 'smooth'
+    });
+    
+    // Tjek om vi skal resette positionen (uden smooth for at undgå hop)
+    setTimeout(() => {
+        if (direction === 1 && track.scrollLeft >= halfWidth) {
+            // Reset til start uden animation
+            track.style.scrollBehavior = 'auto';
+            track.scrollLeft = track.scrollLeft - halfWidth;
+            track.style.scrollBehavior = 'smooth';
+        } else if (direction === -1 && track.scrollLeft <= 0) {
+            // Reset til midten uden animation
+            track.style.scrollBehavior = 'auto';
+            track.scrollLeft = halfWidth;
+            track.style.scrollBehavior = 'smooth';
+        }
+    }, 500);
+}
+
+// Håndter mouse scroll for uendelig scroll
+function handleMouseScroll() {
+    const track = document.querySelector('.carousel-track');
+    const halfWidth = track.scrollWidth / 2;
+    
+    if (track.scrollLeft >= halfWidth) {
+        // Reset til start uden animation
+        track.style.scrollBehavior = 'auto';
+        track.scrollLeft = track.scrollLeft - halfWidth;
+        track.style.scrollBehavior = 'smooth';
+    } else if (track.scrollLeft <= 0) {
+        // Reset til midten uden animation
+        track.style.scrollBehavior = 'auto';
+        track.scrollLeft = halfWidth;
+        track.style.scrollBehavior = 'smooth';
+    }
+}
+
+// Initialiser karusel position og duplicer indhold
+document.addEventListener('DOMContentLoaded', function() {
+    const track = document.querySelector('.carousel-track');
+    const items = track.innerHTML;
+    
+    // Duplicer alt indhold for uendelig scroll
+    track.innerHTML = items + items;
+    
+    // Start i midten af det duplicerede indhold
+    track.scrollLeft = track.scrollWidth / 4;
+    
+    // Tilføj mouse scroll event listener
+    track.addEventListener('scroll', handleMouseScroll);
+});
+
+// Auto-scroll funktion fjernet - kun manuel navigation nu
+
+// Modal funktioner
+function showFishInfo(fishType) {
+    console.log('showFishInfo kaldt med:', fishType);
+    const modal = document.getElementById('info-modal');
+    const infoImage = document.getElementById('info-image');
+    const speakerBtn = document.getElementById('speaker-button');
+    
+    // Sæt det rigtige info-billede baseret på fisketype 
+    if (fishType === 'nemofisk') {
+        infoImage.src = 'klovnefiskinfo.png';
+        infoImage.alt = 'Klovnefisk information';
+        console.log('Nemofisk billede sat');
+    } else if (fishType === 'palet') {
+        infoImage.src = 'Paletkirugen.png';
+        infoImage.alt = 'Paletkirurg information';
+        console.log('Palet billede sat');
+    } else if (fishType === 'rævfisk') {
+        infoImage.src = 'Raevefjaes.png';
+        infoImage.alt = 'Rævfisk information';
+        console.log('Rævfisk billede sat til:', infoImage.src);
+    } else if (fishType === 'reje') {
+        infoImage.src = 'reje1.png';
+        infoImage.alt = 'Reje information';
+        console.log('Reje billede sat til:', infoImage.src);
+    } else if (fishType === 'gubbi') {
+        infoImage.src = 'gubbiinfo.png';
+        infoImage.alt = 'Gubbi information';
+        console.log('Gubbi billede sat til:', infoImage.src);
+    }
+    
+    // Vis højtaler knappen for alle fisk-info billeder
+    if (speakerBtn) {
+        speakerBtn.style.display = 'block';
+    }
+    
+    modal.style.display = 'block';
+    document.body.style.overflow = 'hidden'; // Forhindrer scrolling bagved modal
+}
+
+function closeModal() {
+    const modal = document.getElementById('info-modal');
+    const speakerBtn = document.getElementById('speaker-button');
+    
+    modal.style.display = 'none';
+    
+    // Skjul højtaler knappen når modal lukkes
+    if (speakerBtn) {
+        speakerBtn.style.display = 'none';
+    }
+    
+    document.body.style.overflow = 'auto'; // Genaktiver scrolling
+}
+
+// Funktion til tilbage-knappen
+function tilbageButtonClick() {
+    // Går tilbage til forsiden
+    window.location.href = 'index.html';
+}
+
+// Funktion til hjørne-knappen
+function cornerButtonClick() {
+    // Tilføj en sjov animation før navigation
+    const button = document.querySelector('.corner-button');
+    button.style.transform = 'scale(1.3) rotate(360deg)';
+    
+    // Naviger til fiskhjem.html efter animation
+    setTimeout(() => {
+        window.location.href = 'fiskhjem.html';
+    }, 600);
+}
+
+// Tilføj interaktive effekter til billederne
+document.addEventListener('DOMContentLoaded', function() {
+    const images = document.querySelectorAll('.image-item img');
+    
+    images.forEach(img => {
+        // Tilføj click effekt
+        img.addEventListener('click', function() {
+            // Debug: vis hvilken fil der blev klikket på
+            console.log('Klikket på:', this.src);
+            
+            // Tjek om det er nemofisk der bliver klikket på
+            if (this.src.includes('nemofisk.png')) {
+                console.log('Nemofisk detekteret');
+                showFishInfo('nemofisk');
+                return; // Stop her så vi ikke får den normale animation
+            }
+            
+            // Tjek om det er palet der bliver klikket på
+            if (this.src.includes('Palet.png')) {
+                console.log('Palet detekteret');
+                showFishInfo('palet');
+                return; // Stop her så vi ikke får den normale animation
+            }
+            
+            // Tjek om det er rævfisk der bliver klikket på
+            if (this.src.includes('Raevfisk.png') || this.src.includes('Rævfisk.png')) {
+                console.log('Rævfisk detekteret');
+                showFishInfo('rævfisk');
+                return; // Stop her så vi ikke får den normale animation
+            }
+            
+            // Tjek om det er reje der bliver klikket på
+            if (this.src.includes('reje.png')) {
+                console.log('Reje detekteret');
+                showFishInfo('reje');
+                return; // Stop her så vi ikke får den normale animation
+            }
+            
+            // Tjek om det er gubbi der bliver klikket på
+            if (this.src.includes('gubbi.png')) {
+                console.log('Gubbi detekteret');
+                showFishInfo('gubbi');
+                return; // Stop her så vi ikke får den normale animation
+            }
+            
+            // Normal klik animation for andre billeder
+            this.style.transform = 'scale(0.95)';
+            setTimeout(() => {
+                this.style.transform = 'scale(1)';
+            }, 150);
+        });
+    });
+    
+    // Tilføj keyboard navigation til karusel
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'ArrowLeft') {
+            scrollCarousel(-1);
+        } else if (event.key === 'ArrowRight') {
+            scrollCarousel(1);
+        }
+    });
+});
