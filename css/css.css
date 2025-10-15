@@ -1,5 +1,5 @@
 body {
-    background-image: url('../Baggrund.png');
+    background-image: url('/image/Baggrund.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -261,3 +261,4 @@ body {
 }
 
 /* Forside */
+

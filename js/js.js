@@ -71,23 +71,23 @@ function showFishInfo(fishType) {
     
     // Sæt det rigtige info-billede baseret på fisketype 
     if (fishType === 'nemofisk') {
-        infoImage.src = 'klovnefiskinfo.png';
+        infoImage.src = 'image/klovnefiskinfo.png';
         infoImage.alt = 'Klovnefisk information';
         console.log('Nemofisk billede sat');
     } else if (fishType === 'palet') {
-        infoImage.src = 'Paletkirugen.png';
+        infoImage.src = 'image/Paletkirugen.png';
         infoImage.alt = 'Paletkirurg information';
         console.log('Palet billede sat');
     } else if (fishType === 'rævfisk') {
-        infoImage.src = 'Raevefjaes.png';
+        infoImage.src = 'image/Raevefjaes.png';
         infoImage.alt = 'Rævfisk information';
         console.log('Rævfisk billede sat til:', infoImage.src);
     } else if (fishType === 'reje') {
-        infoImage.src = 'reje1.png';
+        infoImage.src = 'image/reje1.png';
         infoImage.alt = 'Reje information';
         console.log('Reje billede sat til:', infoImage.src);
     } else if (fishType === 'gubbi') {
-        infoImage.src = 'gubbiinfo.png';
+        infoImage.src = 'image/gubbiinfo.png';
         infoImage.alt = 'Gubbi information';
         console.log('Gubbi billede sat til:', infoImage.src);
     }
@@ -117,8 +117,8 @@ function closeModal() {
 
 // Funktion til tilbage-knappen
 function tilbageButtonClick() {
-    // Går tilbage til forsiden
-    window.location.href = 'index.html';
+    // Går tilbage til side2
+    window.location.href = 'side2.html'; 
 }
 
 // Funktion til hjørne-knappen
