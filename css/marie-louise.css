@@ -46,6 +46,30 @@ canvas#game {
   font-size: 14px;
   letter-spacing: .2px;
 }
+*/
 
+/* Tilbage knap i højre hjørne */
+.tilbage-button-left {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1500;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    border-radius: 50%;
+    overflow: hidden;
+}
 
+.tilbage-button-left:hover {
+    transform: scale(1.1);
+    opacity: 0.8;
+}
 
+.tilbage-button-left img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    display: block;
+}

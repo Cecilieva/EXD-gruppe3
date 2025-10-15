@@ -4,3 +4,4 @@ sang
 hej 
 færdig
 hej igen
+nu vi helt færdige 
