@@ -117,7 +117,7 @@ function closeModal() {
 
 // Funktion til tilbage-knappen
 function tilbageButtonClick() {
-    // Går tilbage til side2
+    // Går tilbage til side2.html
     window.location.href = 'side2.html'; 
 }
 
