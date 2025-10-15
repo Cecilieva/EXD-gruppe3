@@ -1,4 +1,4 @@
-
+/*laura*/
 /* Importering af font */
 @import url('https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&display=swap');
 
@@ -77,7 +77,7 @@ img[alt="Baggrundsbillede"] {
 }
 
 .bobble-container-top .bobble-item-top img {
-  width: 250px;
+  width: 300px;
   height: auto;
 }
 
@@ -87,7 +87,7 @@ img[alt="Baggrundsbillede"] {
 }
 
 .bobble-container-bund .bobble-item-bund img {
-  width: 250px; 
+  width: 300px; 
   height: auto;
 }
 
@@ -156,7 +156,7 @@ img[alt="Baggrundsbillede"] {
 
 /* Individuelle bobler */
 .bobble-item img {
-  width: 350px; /* Juster størrelsen efter behov */
+  width: 400px; /* Juster størrelsen efter behov */
   height: auto;
 }
 
