@@ -1,7 +1,7 @@
 /*Cecilie*/
 
 body {
-    background-image: url('/image/Baggrund.png');
+    background-image: url('../image/Baggrund.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
