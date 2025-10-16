@@ -6,3 +6,4 @@ færdig
 hej igen
 nu vi helt færdige 
 okay nu vi done
+hej

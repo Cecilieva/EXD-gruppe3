@@ -116,12 +116,12 @@ body {
     transition: transform 0.5s ease;
     overflow-x: scroll;
     scroll-behavior: smooth;
-    scrollbar-width: none; /* Firefox */
-    -ms-overflow-style: none; /* Internet Explorer 10+ */
+    scrollbar-width: none; 
+    -ms-overflow-style: none; 
 }
 
 .carousel-track::-webkit-scrollbar {
-    display: none; /* WebKit */
+    display: none; 
 }
 
 .image-item {
@@ -200,7 +200,6 @@ body {
 .corner-button:hover {
     transform: scale(1.1) translateY(-10px);
     opacity: 1;
-
 }
 
 .corner-button img {
@@ -217,7 +216,7 @@ body {
     background: none;
     border: none;
     cursor: pointer;
-    z-index: 1500;
+    z-index: 2500;
     transition: transform 0.3s ease, opacity 0.3s ease;
     border-radius: 50%;
     overflow: hidden;

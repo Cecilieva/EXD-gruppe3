@@ -1,17 +1,17 @@
-// Uendelig karusel funktionalitet 
+/* karuselen kører uendelig */
 function scrollCarousel(direction) {
     const track = document.querySelector('.carousel-track');
     const itemWidth = 270; // Billede bredde + gap
     const scrollAmount = itemWidth * 2; // Scroll 2 billeder ad gangen
     const halfWidth = track.scrollWidth / 2;
-    
-    // Normal scroll
+
+    /* Normal scroll */
     track.scrollBy({
         left: direction * scrollAmount,
         behavior: 'smooth'
     });
-    
-    // Tjek om vi skal resette positionen (uden smooth for at undgå hop)
+
+       /* karusellen kører uendeligt */
     setTimeout(() => {
         if (direction === 1 && track.scrollLeft >= halfWidth) {
             // Reset til start uden animation
@@ -121,7 +121,7 @@ function tilbageButtonClick() {
     window.location.href = 'side2.html'; 
 }
 
-// Funktion til hjørne-knappen
+// Funktion til hjørne-knappen 
 function cornerButtonClick() {
     // Tilføj en sjov animation før navigation
     const button = document.querySelector('.corner-button');
@@ -131,7 +131,7 @@ function cornerButtonClick() {
     setTimeout(() => {
         window.location.href = 'fiskhjem.html';
     }, 600);
-}
+} 
 
 // Tilføj interaktive effekter til billederne
 document.addEventListener('DOMContentLoaded', function() {
